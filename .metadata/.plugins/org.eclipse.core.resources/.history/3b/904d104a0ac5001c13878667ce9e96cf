@@ -1,0 +1,13 @@
+package com.study.calc;
+
+// for 문으로 factorial 구현
+
+public class ForCalc implements Calc {
+
+	@Override
+	public long factorial(long num) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

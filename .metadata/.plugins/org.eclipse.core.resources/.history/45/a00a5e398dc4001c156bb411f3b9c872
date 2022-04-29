@@ -1,0 +1,7 @@
+package com.study.myapp;
+
+public class AppleSpeaker {
+	public AppleSpeaker() {
+		System.out.println("AppleSpeaker 객체 생성");
+	}
+}

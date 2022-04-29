@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+$(function(){
+	//regBtn 클릭 시 /Board/register
+	$("#regBtn").click(function(){
+		location.href = "/board/register";
+	})
+	
+	//게시물 등록 시, 모달 창 띄우기
+	checkModal(result);
+	
+	function checkModal(result) {
+		if(result=='') {
+			return;
+		}
+	
+		if(parseInt(result) > 0) {
+			$(".modal-body").html("게시물 "+result+" 번이 등록 되었습니다.");
+		}
+		
+		$("#myModal").modal("show");
+	} // checkModal 종료
+	
+})

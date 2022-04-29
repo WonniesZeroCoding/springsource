@@ -1,0 +1,13 @@
+package com.study.mapper;
+
+import org.apache.ibatis.annotations.Insert;
+
+public interface PersonMapper {
+	// #{id},#{name}" ==> ? 변경 // mybatis에서는 #으로 설정
+	// insert into person(id,name) values(?,?)
+	
+	
+	
+	@Insert("insert into person(id,name) values(#{id},#{name})")
+	public int insertPerson(String id, String name);
+}

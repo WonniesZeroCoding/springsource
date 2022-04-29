@@ -1,0 +1,15 @@
+package com.study.myapp;
+
+public class AppleSpeaker {
+	public AppleSpeaker() {
+		System.out.println("AppleSpeaker 객체 생성");
+	}
+	
+	public void speakerUp() {
+		System.out.println("AppleSpeaker 볼륨 업");
+	}
+	
+	public void speakerDown() {
+		System.out.println("AppleSpeaker 볼륨 다운");
+	}
+}

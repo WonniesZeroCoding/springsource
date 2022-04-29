@@ -1,0 +1,12 @@
+package com.study.service;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.study.dto.AuthDTO;
+import com.study.dto.MemberDTO;
+
+public interface MemberService {
+	//회원 가입
+	public boolean register(MemberDTO register);
+	public AuthDTO login(@Param("userid")String userid,@Param("password") String password);
+}

@@ -1,0 +1,11 @@
+package com.study.myapp;
+
+public class TVMain {
+	public static void main(String[] args) {
+		TV tv = new SamsungTV();
+		
+		tv.powerOn(); 
+		tv.volumeUp();
+		tv.powerOff();
+	}
+}

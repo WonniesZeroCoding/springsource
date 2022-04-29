@@ -1,0 +1,44 @@
+package com.study.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@Slf4j
+@RequestMapping("/sample/*") // http://localhost:9090/sample/**
+public class SampleController {
+	
+	   // 앞쪽 고정 : /WEB-INF/views
+	   // 뒤쪽 고정 : .jsp
+	   
+	   // 컨트롤러의 리턴 타입이 void 인 경우
+	   // http://localhost:9090/ 다음 부분이 jsp 페이지를 찾는데 사용됨
+	   
+	   // 컨트롤러의 리턴 타입이 String인 경우
+	   // return 값만을 가지고 jsp 페이지를 찾습니다.
+	   
+	   // return : void & string으로만
+	
+	@RequestMapping("/basic") // http://localhost:9090/sample/basic
+	public void basic() {
+		log.info("basic...."); // WEB-INF/views/sample/basic.jsp
+	} 
+	
+	@RequestMapping("/login") // http://localhost:9090/sample/login
+	public void login() {
+		log.info("login...."); // WEB-INF/views/sample/login.jsp
+	}
+	
+	@RequestMapping("/doA") // http://localhost:9090/sample/doA
+	public void doA() {
+		log.info("doA..."); 	// WEB-INF/views/sample/login.jsp
+	}
+	
+	@RequestMapping("/insert") // http://localhost:9090/sample/insert
+	public String insert() {
+		log.info("insert...");
+		return "insert"; // /WEB-INF/views/insert.jsp
+	}
+}

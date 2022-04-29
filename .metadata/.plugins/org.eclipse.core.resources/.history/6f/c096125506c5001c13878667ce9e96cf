@@ -1,0 +1,11 @@
+package com.study.calc;
+
+public class ForCalc implements Calc {
+
+	@Override
+	public long factorial(long num) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

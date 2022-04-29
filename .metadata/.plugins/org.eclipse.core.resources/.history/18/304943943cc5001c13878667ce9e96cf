@@ -1,0 +1,58 @@
+package com.study.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@Slf4j
+@RequestMapping("/sample/*") // http://localhost:9090/sample/**
+public class SampleController {
+	
+	   // 앞쪽 고정 : /WEB-INF/views
+	   // 뒤쪽 고정 : .jsp
+	   
+	   // 컨트롤러의 리턴 타입이 void 인 경우
+	   // http://localhost:9090/ 다음 부분이 jsp 페이지를 찾는데 사용됨
+	   
+	   // 컨트롤러의 리턴 타입이 String인 경우
+	   // return 값만을 가지고 jsp 페이지를 찾습니다.
+	   
+	   // return : void & string으로만
+	
+	//@RequestMapping(path = "/basic", method = RequestMethod.GET) // http://localhost:9090/sample/basic
+	public void basic() {
+		log.info("basic...."); // WEB-INF/views/sample/basic.jsp
+	} 
+	
+	// GET + POST
+	//@RequestMapping("/login") // http://localhost:9090/sample/login
+	//@RequestMapping(path="/login", method = RequestMethod.GET)
+	
+	public void login() {
+		log.info("login...."); // WEB-INF/views/sample/login.jsp
+	}
+	
+	//@RequestMapping(path="/login", method = RequestMethod.POST)
+	@PostMapping("/login")
+	public void loginPost(String userid, String password) {
+		log.info("login POST...."+userid); // WEB-INF/views/sample/login.jsp
+	}
+	
+	//@RequestMapping(path = "/doA", method=RequestMethod.GET) // http://localhost:9090/sample/doA
+	@GetMapping("/doA")
+	public void doA() {
+		log.info("doA..."); 	// WEB-INF/views/sample/login.jsp
+	}
+	
+	//@RequestMapping(value = "/insert", method = RequestMethod.GET) // http://localhost:9090/sample/insert
+	@GetMapping("/insert")
+	public String insert() {
+		log.info("insert...");
+		return "insert"; // /WEB-INF/views/insert.jsp
+	}
+}

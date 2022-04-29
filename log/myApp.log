@@ -1,0 +1,8 @@
+2022-04-26 12:49:13,549 ERROR [main] c.s.m.LogTest [LogTest.java:15] error
+2022-04-26 12:49:13,553 WARN [main] c.s.m.LogTest [LogTest.java:16] warn
+2022-04-26 12:49:13,554 INFO [main] c.s.m.LogTest [LogTest.java:17] info
+2022-04-26 12:49:13,554 DEBUG [main] c.s.m.LogTest [LogTest.java:18] debug
+2022-04-26 12:50:44,205 ERROR [main] c.s.m.LogTest [LogTest.java:15] error
+2022-04-26 12:50:44,209 WARN [main] c.s.m.LogTest [LogTest.java:16] warn
+2022-04-26 12:50:44,210 INFO [main] c.s.m.LogTest [LogTest.java:17] info
+2022-04-26 12:50:44,210 DEBUG [main] c.s.m.LogTest [LogTest.java:18] debug

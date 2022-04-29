@@ -1,0 +1,18 @@
+package com.study.service;
+
+import java.util.List;
+
+import com.study.dto.BoardDTO;
+import com.study.mapper.BoardMapper;
+
+public class BoardServiceImpl implements BoardService {
+
+	private BoardMapper mapper;
+	
+	@Override
+	public List<BoardDTO> getList(BoardDTO dto) {
+		
+		return mapper.getList(BoardDTO dto);
+	}
+
+}

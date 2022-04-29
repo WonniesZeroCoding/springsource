@@ -1,0 +1,17 @@
+package com.study.myapp.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.study.myapp.dto.BookDTO;
+
+public class BookDAO {
+
+		public List<BookDTO> select() {
+			List<BookDTO> list = new ArrayList<BookDTO>();
+			
+			
+			
+			return list;
+		}
+}

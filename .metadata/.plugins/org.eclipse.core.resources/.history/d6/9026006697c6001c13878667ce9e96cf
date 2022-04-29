@@ -1,0 +1,32 @@
+package com.study.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@Slf4j
+@RequestMapping("/member/*")
+public class MemberController {
+
+	//step1 보여주는 컨트롤러 작성
+	@GetMapping("/step1")
+	public void step1Get() {
+		log.info("step1 페이지 요청");
+	}
+	
+	//step2 보여주는 컨트롤러 작성
+	//http://localhost:9090/member/step2
+	@PostMapping("/step2")
+	public void step(boolean agree) { /* 타입변환 알아서 해주니까 () 안에 알아서 타입 쓰십쇼*/
+		log.info("step2(회원가입) 페이지 요청"+agree);
+		
+		//약관 동의를 했다면 step2 페이지 보여주기
+		//안했다면 step1 돌려보내기
+		
+		
+	}
+}

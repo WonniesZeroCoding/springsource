@@ -1,0 +1,5 @@
+package com.study.myapp.dto;
+
+public class Criteria {
+
+}

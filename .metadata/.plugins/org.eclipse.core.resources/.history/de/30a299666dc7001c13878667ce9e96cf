@@ -1,0 +1,12 @@
+package com.study.mapper;
+
+import java.util.List;
+
+import com.study.dto.BoardDTO;
+
+public interface BoardMapper {
+	public List<BoardDTO> select();
+	public int insert(BoardDTO insertDto);
+	public BoardDTO read(int bno);
+	public int modify(BoardDTO modifyDto);
+}

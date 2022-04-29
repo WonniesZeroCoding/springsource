@@ -1,0 +1,10 @@
+package com.study.mapper;
+
+import org.apache.ibatis.annotations.Insert;
+
+public interface PersonMapper {
+	// #{id},#{name}" ==> ? 변경
+	// insert into person(id,name) values(#{id},#{name})");
+	@Insert("insert into person(id,name) values(#{id},#{name})")
+	public int insertPerson(String id, String name);
+}

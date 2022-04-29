@@ -1,0 +1,5 @@
+package com.study.myapp.di;
+
+public class HelloApp {
+
+}

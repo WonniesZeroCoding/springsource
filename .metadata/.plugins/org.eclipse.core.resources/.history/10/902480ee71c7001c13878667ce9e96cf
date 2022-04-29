@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+$(function(){
+	//regBtn 클릭 시 /Board/register
+	$("#regBtn").click(function(){
+		location.href = "/board/register";
+	})
+	
+
+	
+})

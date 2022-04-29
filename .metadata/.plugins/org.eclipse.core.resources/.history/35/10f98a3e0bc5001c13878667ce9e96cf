@@ -1,0 +1,16 @@
+package com.study.calc;
+
+import org.springframework.stereotype.Component;
+
+// for 문으로 factorial 구현
+
+@Component("forc")
+public class ForCalc implements Calc {
+
+	@Override
+	public long factorial(long num) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

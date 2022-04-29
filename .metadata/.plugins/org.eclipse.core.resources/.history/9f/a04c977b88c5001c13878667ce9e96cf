@@ -1,0 +1,16 @@
+package com.study.myapp;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.study.service.PersonService;
+
+public class PersonApp {
+	public static void main(String[] args) {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("config.xml");
+		
+		PersonService service = (PersonService) ctx.getBean("person");
+		System.out.println(service.insertPerson("kang456", "강민섭"));
+	
+	}
+}

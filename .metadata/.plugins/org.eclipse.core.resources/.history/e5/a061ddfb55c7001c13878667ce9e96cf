@@ -1,0 +1,7 @@
+/**
+ * 
+ */
+$(function(){
+	//regBtn 클릭 시 /Board/register
+	
+})

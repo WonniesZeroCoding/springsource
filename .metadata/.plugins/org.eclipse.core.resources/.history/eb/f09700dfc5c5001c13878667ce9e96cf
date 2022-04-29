@@ -1,0 +1,28 @@
+package com.study.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@Slf4j
+@RequestMapping("/calc/*")
+public class AddController {
+//	메소드 명은 중요한게 아니다
+	// 사용자가 들어오는 주소, 즉 맵핑이 가장 중요하다
+	@GetMapping("/add")
+	public void addGet() {
+		log.info("add.jsp 페이지요청..");
+	}
+	@PostMapping("/add")
+	public void addPost(int num1, int num2) {
+		//넘겨주는 값 () 안에 타입, 이름 맞춰줄 것
+		//add.jsp에서 넘겨주는 값 num1, num2
+		log.info("덧셈 요청");
+		log.info("num1 + num2" = +(num1+num2));
+	}
+	
+}

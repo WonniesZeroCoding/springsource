@@ -1,0 +1,15 @@
+package com.study.mapper;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.study.dto.AuthDTO;
+import com.study.dto.MemberDTO;
+
+public interface MemberMapper {
+	//CRUD 메소드 정의
+	
+	//inCert (C)-회원가입
+	public int insert(MemberDTO register);
+	public AuthDTO login(@Param("userid") String userid,@Param("password") String password);
+	
+}
