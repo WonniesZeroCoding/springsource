@@ -13,5 +13,6 @@ public interface BoardService {
 	public BoardDTO getRow(int bno);
 	public boolean modify(BoardDTO modifyDto);
 	public boolean remove(int bno);
-	public int getTotalCnt();
+	public int getTotalCnt(Criteria cri);
+	
 }

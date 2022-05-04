@@ -8,11 +8,23 @@ $(function(){
 	// list 버튼 클릭 시, list 페이지( /board/list ) 이동
 	// list 버튼 => [type="reset"] == :reset  || 
 	$(".btn-info").click(function(){
-		location.href = "/board/list";
+	
+		// operForm bno 태그 제거하기
+		operForm.find("input[name='bno']").remove();
+		//우선 find(찾을 것(태그 등))로 찾고 .remove() 로 제거
+		
+		// operForm action 수정 --> /board/list로 수정
+		operForm.attr("action","/board/list");
+	
+		// operForm 보내기
+		operForm.submit();
+	
 	})
 	
 	$(".btn-default").click(function(){
 		  $("#operForm").submit();
+		  
+	
 	})
 	
 })

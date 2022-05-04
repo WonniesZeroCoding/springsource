@@ -1,5 +1,0 @@
-package com.study.mapper;
-
-public interface PersonMapper {
-	public int insertPerson(String id, String name);
-}

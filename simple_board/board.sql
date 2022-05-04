@@ -57,6 +57,39 @@ from (
 )
 where rn > 10;
 
--- pageNum * 번호
-2 * 10
-(2-10) * 10
+-- 페이지 나누기 + 검색
+
+--1) 타이틀이 ~~ 인 것을 검색하고 싶다
+-- 검색 시 주소줄 ) pageNum=1&amount=10&type=T&keyword=~~
+select bno, title, writer, regdate, updatedate
+from(select /*+INDEX_DESC(spring_board pk_spring_board)*/ rownum rn, bno, title, writer, regdate, updatedate 
+	 from spring_board
+	 where bno>0 and (title like '%~~%' || content like '%~~%' ) and rownum <= (1*30)
+)
+where rn > (1-1) * 30
+
+-- 댓글
+create table spring_reply(
+	rno number(10,0), -- 댓글 번호
+	bno number(10,0) not null, -- 원본글 번호
+	reply varchar2(1000) not null, -- 댓글 내용
+	replyer varchar2(50) not null, -- 댓글 작성자
+	replydate date default sysdate, -- 댓글 작성 날짜
+	updatedate date default sysdate -- 댓글 수정 날짜
+	
+);
+
+--댓글 시퀀스
+create sequence seq_reply;
+
+--댓글 테이블 pk 설정 후 이름 지정
+alter table spring_reply add constraint pk_reply primary key(rno);
+
+--외래키 제약
+alter table spring_reply add constraint fk_reply_board foreign key(bno)
+references spring_board(bno);
+
+select * from spring_reply;
+
+-- index 생성
+create index idx_reply on spring_reply(bno desc,rno asc);

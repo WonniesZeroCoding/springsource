@@ -15,7 +15,14 @@
 	select bno, title, writer, regdate, updatedate
 	from (select /*+INDEX_DESC(spring_board pk_spring_board)*/ rownum rn, bno, title, writer, regdate, updatedate 
 			from spring_board
-			where bno > 0 and rownum <= (#{pageNum} * #{amount}))
+			where 
+		]]>
+		
+		<!-- 레퍼런스 id = "동적 sql에 만든 id" -->
+		<include refid="criteria"></include>
+		
+		<![CDATA[	
+			bno > 0 and rownum <= (#{pageNum} * #{amount}))
 	where rn > (#{pageNum} -1) * #{amount}
 	
 		]]>
@@ -23,11 +30,34 @@
 	</select>
 	
 	<select id="totalCnt" resultType="int">
-		select count(*) from spring_board where bno> 0
+		select count(*) from spring_board where 
+			<!-- 레퍼런스 id = "동적 sql에 만든 id" -->
+			<include refid="criteria"></include>
+		bno> 0
 	</select>
 	
-
-	
+	<!-- 동적 sql -->
+	<sql id="criteria">
+		<trim prefix="(" suffix=") and" prefixOverrides="or">
+			<foreach collection="typeArr" item="type">
+				<trim prefix="or">
+					<choose>
+						<when test="type=='T'.toString()">
+							title like '%' ||#{keyword}||'%'
+						</when>
+						
+						<when test="type=='C'.toString()">
+							content like '%' ||#{keyword}||'%'
+						</when>
+						
+						<when test="type=='W'.toString()">
+							writer like '%' ||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
 
 	<insert id="insert">
 	<!-- selectKey : 주로 PK(primary Key) 값을 미리 실행한 후 특정 이름으로 보관 
