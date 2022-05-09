@@ -1,7 +1,0 @@
-package com.study.myapp;
-
-public class ItemApp {
-	public static void main(String[] args) {
-		
-	}
-}

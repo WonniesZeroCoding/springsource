@@ -41,6 +41,22 @@
                 	</div>
                 </div>
             </div>
+<%-- 파일 첨부 영역 --%>
+<div class="row">
+      	<div class="col-lg-12">
+      		<div class="panel panel-default">
+      			<div class="panel-heading"><i class="fa fas fa-file"></i>첨부파일</div>
+      			<div class="panel-body">
+      				<div class="uploadResult">
+      					<ul><!-- 첨부파일 정보  --></ul>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      </div>        
+ <div class="bigPictureWrapper">
+   		<div class="bigPicture"></div>
+ </div>           
 <%-- 댓글 리스트 영역 --%>
 <div class="row">
 	<div class="col-lg-12">
@@ -58,18 +74,20 @@
 						<strong class="primary-font">user00</strong>
 						<small class="pull-right text-muted">2022-05-04 15:54</small>
 						</div>
-						<!-- 댓글내용 -->
-						<p>Good Job</p>
+							<!-- 댓글내용 -->
+							<p>Good Job</p>
 						</div>					
 					</li>
 				</ul>
 			</div>
+			<%-- 댓글 페이지 영역 --%>
+			<div class="panel-footer"></div>
 		</div>
 	</div>
 </div>
 <%-- 댓글 작성 모달 폼 --%>
 
-<div class="modal" tabindex="-1" id="replyModal">
+<div class="modal" tabindex="-1" id="replyModal" data-rno="1" >
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -120,5 +138,6 @@
 	let bno = ${dto.bno};
 </script>      
 <script src="/resources/js/read.js"></script>           
-<script src="/resources/js/reply.js"></script>           
+<script src="/resources/js/reply.js"></script>
+<script src="/resources/js/upload.js"></script>           
 <%@include file="../includes/footer.jsp" %>       

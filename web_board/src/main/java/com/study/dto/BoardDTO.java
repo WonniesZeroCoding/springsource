@@ -1,14 +1,20 @@
 package com.study.dto;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+@ToString
 public class BoardDTO {
 	private int bno;
 	private String title;
@@ -16,4 +22,8 @@ public class BoardDTO {
 	private String writer;	
 	private Date regdate;
 	private Date updatedate;
+	private int replycnt;
+
+	 //첨부파일 정보
+	 private List<AttachDTO> attachList;
 }

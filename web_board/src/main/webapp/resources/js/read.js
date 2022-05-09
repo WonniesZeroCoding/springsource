@@ -27,4 +27,19 @@ $(function(){
 	
 	})
 	
+	//첨부 파일 가져오기 - 무조건 실행되는 부분(있든-있으면 보여주고, 없든-없으면 안보여줌)
+	$.getJSON({
+		url:'getAttachList',
+		data:{
+			bno:bno
+		},
+		success:function(data){
+			console.log(data);
+			
+		}
+		
+	})
+	
+	
+	
 })

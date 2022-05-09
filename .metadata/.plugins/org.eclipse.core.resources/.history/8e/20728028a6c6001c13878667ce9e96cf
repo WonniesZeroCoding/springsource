@@ -1,9 +1,0 @@
-package com.study.service;
-
-import com.study.dto.MemberDTO;
-
-public interface MemberService {
-	//회원 가입
-	public boolean register(MemberDTO register);
-	
-}

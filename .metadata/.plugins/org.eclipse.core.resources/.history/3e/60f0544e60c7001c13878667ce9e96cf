@@ -1,9 +1,0 @@
-/**
- * 
- */
-$(function(){
-	// list 버튼 클릭 시, list 페이지( /board/list ) 이동
-	$("#list").click(function(){
-		location.href = "/board/list";
-	})
-})

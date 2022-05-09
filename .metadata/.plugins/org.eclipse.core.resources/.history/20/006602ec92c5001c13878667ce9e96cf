@@ -1,5 +1,0 @@
-package com.study.myapp.mapper;
-
-public interface BoardMapper {
-
-}
