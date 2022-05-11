@@ -17,7 +17,7 @@ import com.study.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RestController // 컨트롤러가 보내는 모든 값은 데이터 JSP가 아니고. 데이터!
+@RestController // 컨트롤러가 보내는 모든 값은 데이터이다 JSP가 아니고. 데이터!
 @RequestMapping("/member/*")
 public class MemberController {
 	

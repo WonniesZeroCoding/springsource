@@ -10,34 +10,40 @@ import com.study.mapper.BookMapper;
 
 @Service
 public class BookServiceImpl implements BookService {
-
+	
 	@Autowired
-	private BookMapper mapper;
+	private BookMapper mapper;	
+
+	
 	@Override
-	public boolean BookInsert(BookDTO insertDto) {
+	public boolean bookInsert(BookDTO insertDto) {
 		return mapper.insert(insertDto)==1?true:false;
 	}
 
 	@Override
-	public List<BookDTO> getList() {
-		
+	public List<BookDTO> getList() {	
 		return mapper.list();
 	}
 
 	@Override
-	public BookDTO getRow(int code) {
+	public BookDTO getRow(int code) {		
 		return mapper.select(code);
 	}
 
 	@Override
-	public List<BookDTO> getsearchList(String criteria, String keyword) {
+	public List<BookDTO> getSearchList(String criteria, String keyword) {		
 		return mapper.search(criteria, keyword);
 	}
 
 	@Override
-	public boolean bookUpdate(int code, int price) {
+	public boolean bookUpdate(int code, int price) {		
 		return mapper.update(code, price)==1?true:false;
-				
+	}
+
+	@Override
+	public boolean bookDelete(int code) {	
+		return mapper.delete(code)==1?true:false;
 	}
 
 }
+

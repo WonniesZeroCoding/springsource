@@ -44,12 +44,10 @@ public class HomeController {
 	@GetMapping("/member/changePwd")
 	public void change() { // 여기는 void인건 mapping된 주소로 이동하기 때문에 String이 필요 없음
 		logger.info("회원 수정 요청");
-	}
-	
-	
-	
+	}		
 	
 	@ResponseBody // RestController 과 같은 효과 ( JSP 로 보내는 것(이동)이 아닌, 페이지에 표시 )
+	
 	   @GetMapping("/test")
 	   public String read() {
 	      return "success";
